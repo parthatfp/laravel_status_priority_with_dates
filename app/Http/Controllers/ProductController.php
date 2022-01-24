@@ -13,7 +13,6 @@ class ProductController extends Controller
         $productOrderByDate = $product->groupBy(function ($val) {
             return Carbon::parse($val->created_at)->format('d/m/Y');
         });
-        // dd($productOrderByDate);
         return view('welcome', compact('productOrderByDate'));
     }
 
